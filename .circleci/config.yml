@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/properygraph
 
     docker:
-      - image: circleci/node:9.9.0
+      - image: circleci/node:9
 
     steps:
       - checkout
