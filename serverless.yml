@@ -5,7 +5,7 @@
 # uses to deploy your code to your provider of choice
 
 # The `service` block is the name of the service
-service: hello-world-cd
+service: propertygraph
 
 # exclude the code coverage files and circle ci files
 package:
@@ -17,6 +17,15 @@ package:
 provider:
   name: aws
   runtime: nodejs6.10
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: false
+    packager: 'yarn'
 
 # The `functions` block defines what code to deploy
 functions:

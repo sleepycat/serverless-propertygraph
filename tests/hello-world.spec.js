@@ -16,7 +16,7 @@ describe('helloWorld', () => {
   })
 })
 
-const HelloWorld = require('../lib/hello-world')
+const { HelloWorld } = require('../lib/hello-world')
 
 describe('sayHello', () => {
   let event = {}

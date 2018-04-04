@@ -1,6 +1,6 @@
 'use strict'
 
-const HelloWorld = require('./lib/hello-world')
+const { HelloWorld } = require('./lib/hello-world')
 
 module.exports.helloWorld = (event, context, callback) => {
   var hWorld = new HelloWorld()
