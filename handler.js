@@ -1,16 +1,14 @@
-'use strict'
+import { Greeter } from './lib/Greeter'
 
-const { HelloWorld } = require('./lib/hello-world')
-
-module.exports.helloWorld = (event, context, callback) => {
-  var hWorld = new HelloWorld()
+export const helloWorld = (event, context, callback) => {
+  var greeter = new Greeter()
 
   const response = {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+      'Access-Control-Allow-Origin': '*',
     },
-    body: JSON.stringify(hWorld.sayHello(event)),
+    body: JSON.stringify(greeter.sayHello(event)),
   }
 
   callback(null, response)

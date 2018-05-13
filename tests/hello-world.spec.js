@@ -1,5 +1,5 @@
 /* eslint import/unambiguous: 0 */
-const { helloWorld } = require('../handler')
+import { helloWorld } from '../handler'
 
 describe('helloWorld', () => {
   let event = {}
@@ -16,13 +16,13 @@ describe('helloWorld', () => {
   })
 })
 
-const { HelloWorld } = require('../lib/hello-world')
+import { Greeter } from '../lib/Greeter'
 
 describe('sayHello', () => {
   let event = {}
-  let hWorld = new HelloWorld()
+  let greeter = new Greeter()
 
   it('should call sayHello and return message', () => {
-    expect(hWorld.sayHello(event).message).toBe('Hello world.')
+    expect(greeter.sayHello(event).message).toBe('Hello world.')
   })
 })
